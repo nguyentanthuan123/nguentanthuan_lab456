@@ -25,6 +25,26 @@ namespace nguentanthuan_lab456.Controllers
             };
             return View(viewModel);
         }
+        [Authorize]
+        [HttpPost]
+        public ActionResult Create (CourseViewModel viewModel)
+        {
+            if(!ModelState.IsValid)
+            {
+                viewModel.Categories = _dbContext.Categories.ToList();
+                return View("Create", viewModel);
+            }
+            var course = new Course
+            {
+                LecturerId = User.Identity.GetUserId(),
+                DateTime = viewModel.GetDateTime(),
+                CategoryId = viewModel.Category,
+                Place = viewModel.Place
+            };
+            _dbContext.Courses.Add(course);
+            _dbContext.Savechanges();
 
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

@@ -20,5 +20,10 @@ namespace nguentanthuan_lab456.Models
         {
             return new ApplicationDbContext();
         }
+
+        internal void Savechanges()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
