@@ -11,10 +11,10 @@ namespace nguentanthuan_lab456.Controllers
 {
     public class CoursesController : Controller
     {
-        private readonly ApplycationDbContext _dbContext;
+        private readonly ApplicationDbContext _dbContext;
         public CoursesController()
         {
-            _dbContext = new ApplycationDbContext();
+            _dbContext = new ApplicationDbContext();
         }
         // GET: Courses
         public ActionResult Create()
