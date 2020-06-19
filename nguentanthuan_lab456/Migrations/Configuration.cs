@@ -9,7 +9,7 @@ namespace nguentanthuan_lab456
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Models.ApplicationDbContext context)
